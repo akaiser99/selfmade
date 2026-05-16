@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt – PC-Hilfe Stuttgart</title>
+  <meta name="description" content="Kontaktiere mich für PC-Hilfe in Stuttgart. Schnelle Antwort, faire Preise." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="logo">PC<span>Hilfe</span>Stuttgart</a>
+  <button class="nav-toggle" aria-label="Menü öffnen" onclick="toggleMenu()">
+    <i class="ti ti-menu-2"></i>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html#leistungen">Leistungen</a>
+    <a href="index.html#preise">Preise</a>
+    <a href="index.html#bewertungen">Bewertungen</a>
+    <a href="kontakt.html" class="nav-cta">Kontakt</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <h1>Kontakt</h1>
+    <p>Problem mit deinem PC? Schreib mir — ich melde mich innerhalb von 24 Stunden.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="contact-grid">
+
+    <div class="contact-info">
+      <h3>So erreichst du mich</h3>
+
+      <div class="contact-item">
+        <i class="ti ti-map-pin"></i>
+        <p>
+          <strong>Standort</strong>
+          Stuttgart & Umgebung<br>
+          Hausbesuch möglich
+        </p>
+      </div>
+
+      <div class="contact-item">
+        <i class="ti ti-brand-whatsapp"></i>
+        <p>
+          <strong>WhatsApp (bevorzugt)</strong>
+          +49 XXX XXXXXXX
+        </p>
+      </div>
+
+      <div class="contact-item">
+        <i class="ti ti-mail"></i>
+        <p>
+          <strong>E-Mail</strong>
+          deine@email.de
+        </p>
+      </div>
+
+      <div class="contact-item">
+        <i class="ti ti-clock"></i>
+        <p>
+          <strong>Erreichbarkeit</strong>
+          Mo–Fr: 15:00–20:00 Uhr<br>
+          Sa–So: 10:00–18:00 Uhr
+        </p>
+      </div>
+
+      <div class="contact-item">
+        <i class="ti ti-credit-card"></i>
+        <p>
+          <strong>Zahlung</strong>
+          Bar oder per Überweisung.<br>
+          Keine Vorauszahlung nötig.
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <div class="form-card" id="form-card">
+        <h3>Anfrage senden</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Dein Name *</label>
+            <input type="text" id="name" placeholder="Max Mustermann" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefon / WhatsApp *</label>
+            <input type="tel" id="phone" placeholder="+49 170 1234567" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">E-Mail (optional)</label>
+          <input type="email" id="email" placeholder="deine@email.de" />
+        </div>
+        <div class="form-group">
+          <label for="service">Welche Leistung brauchst du? *</label>
+          <select id="service" required>
+            <option value="" disabled selected>Bitte auswählen...</option>
+            <option>Virenentfernung</option>
+            <option>Windows neu aufsetzen</option>
+            <option>PC beschleunigen</option>
+            <option>WLAN / Netzwerkprobleme</option>
+            <option>PC-Diagnose</option>
+            <option>Einrichtung & Setup</option>
+            <option>Sonstiges</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="msg">Beschreibe kurz dein Problem *</label>
+          <textarea id="msg" placeholder="Z.B. Mein PC startet sehr langsam, seit ca. 2 Wochen..." required></textarea>
+        </div>
+        <div class="form-group" style="font-size:12px;color:var(--text-muted);">
+          * Pflichtfelder. Deine Daten werden nur zur Bearbeitung deiner Anfrage verwendet. Weitere Infos in der <a href="datenschutz.html">Datenschutzerklärung</a>.
+        </div>
+        <div class="form-submit">
+          <button class="btn-primary" onclick="submitForm()">Anfrage absenden</button>
+        </div>
+      </div>
+
+      <div class="form-card form-success" id="form-success">
+        <i class="ti ti-circle-check"></i>
+        <h3>Nachricht erhalten!</h3>
+        <p>Danke für deine Anfrage. Ich melde mich so schnell wie möglich — in der Regel innerhalb weniger Stunden.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-logo">PC<span>Hilfe</span>Stuttgart</div>
+    <div class="footer-links">
+      <a href="index.html">Startseite</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <p class="footer-copy">© 2025 PC-Hilfe Stuttgart. Alle Rechte vorbehalten.</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('nav-links').classList.toggle('open');
+}
+function submitForm() {
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const service = document.getElementById('service').value;
+  const msg = document.getElementById('msg').value.trim();
+  if (!name || !phone || !service || !msg) {
+    alert('Bitte fülle alle Pflichtfelder aus.');
+    return;
+  }
+  document.getElementById('form-card').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+}
+</script>
+</body>
+</html>
